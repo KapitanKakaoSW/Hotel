@@ -8,15 +8,15 @@ public class Validator {
         while (!scanner.hasNextInt()) {
             String str = scanner.nextLine().trim();
             System.out.printf("\"%s\" - не число!\n", str);
-            System.out.print("Введите количество!: ");
+            System.out.print("Введите число!: ");
         }
         int quantity = scanner.nextInt();
         while (quantity <= 0) {
-            System.out.println("Неверное значение! Введите количество: ");
+            System.out.println("Неверное значение! Введите число: ");
             while (!scanner.hasNextInt()) {
                 String str = scanner.next().trim();
                 System.out.printf("\"%s\" - не число!\n", str);
-                System.out.println("Введите количество!: ");
+                System.out.println("Введите число!: ");
             }
             quantity = scanner.nextInt();
         }
