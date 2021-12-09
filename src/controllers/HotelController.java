@@ -3,6 +3,7 @@ package controllers;
 import utils.Rounder;
 import models.HotelModel;
 import views.HotelView;
+import java.util.HashMap;
 
 
 public class HotelController {
@@ -10,6 +11,7 @@ public class HotelController {
     HotelModel model;
     HotelView view;
     double starsCoefficient;
+    HashMap<Integer, String> hotelNames = new HashMap<>(5);
 
     public HotelController(HotelModel model, HotelView view) {
         this.model = model;
@@ -22,6 +24,12 @@ public class HotelController {
         view.getPersonsInput();
         view.getDaysInput();
         view.getChildren();
+
+        hotelNames.put(1, "Мини-отель Wood Cottage");
+        hotelNames.put(2, "Отель Ягуар");
+        hotelNames.put(3, "Гостинично-ресторанный комплекс Мир");
+        hotelNames.put(4, "Отель Виктория");
+        hotelNames.put(5, "Частная усадьба Белый Дом");
 
         switch (model.getStars()) {
             case 1 -> starsCoefficient = 1;
