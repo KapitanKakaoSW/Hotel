@@ -29,14 +29,28 @@ public class ReservationView {
         roomNumber = Validator.validateQuantityInput(scanner);
         model.setRoomNumber(roomNumber);
 
-        title = "Введите дату заселения(дд/мм/гггг): ";
-        System.out.println(title);
-        startDate = simpleDateFormat.parse(scanner.next()); //TODO exception handling
+        while (true) {
+            title = "Введите дату заселения(дд/мм/гггг): ";
+            System.out.println(title);
+            try {
+                startDate = simpleDateFormat.parse(scanner.next());
+                break;
+            } catch (Exception e){
+                System.out.println("Неверный формат даты.");
+            }
+        }
         model.setStartDate(startDate);
 
         title = "Введите дату отъезда(дд/мм/гггг): ";
         System.out.println(title);
-        finalDate = simpleDateFormat.parse(scanner.next()); //TODO exception handling
+        while (true) {
+            try {
+                finalDate = simpleDateFormat.parse(scanner.next());
+                break;
+            } catch (Exception e) {
+                System.out.println("Неверный формат даты.");
+            }
+        }
         model.setFinalDate(finalDate);
     }
 
