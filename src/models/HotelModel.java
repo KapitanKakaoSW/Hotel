@@ -62,18 +62,6 @@ public class HotelModel implements Price {
         this.additionalChildren = additionalChildren;
     }
 
-    public double getBasePrice() {
-        return basePrice;
-    }
-
-    public double getAdultPlus() {
-        return adultPlus;
-    }
-
-    public double getChildPlus() {
-        return childPlus;
-    }
-
     @Override
     public double priceCalculation(int days, int rooms) {
         return days * ((rooms * basePrice) + (additionalAdults * adultPlus) + (additionalChildren * childPlus));
