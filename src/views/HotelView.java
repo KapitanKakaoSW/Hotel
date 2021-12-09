@@ -98,6 +98,16 @@ public class HotelView {
         } else model.setRooms(rooms);
     }
 
+    public void getDaysInput() {
+
+        scanner = new Scanner(System.in);
+
+        title = "Введите желаемое количество ночей: ";
+        System.out.println(title);
+        days = Validator.validateQuantityInput(scanner);
+        model.setDays(days);
+    }
+
     public void getOutput(String output) {
         System.out.println(output);
     }
