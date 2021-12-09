@@ -32,6 +32,7 @@ public class ReservationView {
         while (true) {
             title = "Введите дату заселения(дд/мм/гггг): ";
             System.out.println(title);
+
             try {
                 startDate = simpleDateFormat.parse(scanner.next());
                 break;
@@ -43,6 +44,7 @@ public class ReservationView {
 
         title = "Введите дату отъезда(дд/мм/гггг): ";
         System.out.println(title);
+
         while (true) {
             try {
                 finalDate = simpleDateFormat.parse(scanner.next());
@@ -53,6 +55,7 @@ public class ReservationView {
         }
         model.setFinalDate(finalDate);
     }
+
     public void getOutput(String output) {
         System.out.println(output);
     }
