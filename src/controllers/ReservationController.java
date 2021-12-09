@@ -16,7 +16,9 @@ public class ReservationController {
 
     public void runApp() {
 
-        view.getInputs();
+        view.getRoomNumber();
+        view.getStartDate();
+        view.getFinalDate();
 
         String roomNumber = String.valueOf(model.getRoomNumber());
 
