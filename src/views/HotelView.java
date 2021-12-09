@@ -35,6 +35,7 @@ public class HotelView {
         title = "Введите количество взрослых людей: ";
         System.out.print(title);
         persons = Validator.validateQuantityInput(scanner);
+
         if (persons >= 4) {
 
             title = "Количество взрослых 4 человека и более. Желаете снять несколько номеров?(да/нет): ";
