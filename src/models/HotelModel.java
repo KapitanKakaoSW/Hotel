@@ -75,7 +75,7 @@ public class HotelModel implements Price {
     }
 
     @Override
-    public double priceCalculation(int days, int persons) {
-        return days * persons * price;
+    public double priceCalculation(int days, int rooms) {
+        return days * ((rooms * basePrice) + (additionalAdults * adultPlus) + (additionalChildren * childPlus));
     }
 }
