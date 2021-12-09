@@ -31,7 +31,6 @@ public class HotelView {
 
     public void getPersonsInput() {
 
-        scanner = new Scanner(System.in);
 
         title = "Введите количество взрослых людей: ";
         System.out.print(title);
@@ -70,8 +69,6 @@ public class HotelView {
 
     public void getRoomsInput() {
 
-        scanner = new Scanner(System.in);
-
         title = "Введите желаемое количество номеров: ";
         System.out.println(title);
         rooms = Validator.validateQuantityInput(scanner);
@@ -101,8 +98,6 @@ public class HotelView {
 
     public void getDaysInput() {
 
-        scanner = new Scanner(System.in);
-
         title = "Введите желаемое количество ночей: ";
         System.out.println(title);
         days = Validator.validateQuantityInput(scanner);
@@ -110,8 +105,6 @@ public class HotelView {
     }
 
     public void getChildren() {
-
-        scanner = new Scanner(System.in);
 
         title = "Введите количество детей(если таковые отсутствуют, введите 0): ";
         System.out.println(title);
