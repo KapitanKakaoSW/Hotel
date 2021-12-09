@@ -28,16 +28,18 @@ public class HotelController {
             case 5 -> starsCoefficient = 2.5;
         }
 
+        String persons = String.valueOf(model.getPersons());
+        String days = String.valueOf(model.getDays());
+
         double paymentInitial = model.priceCalculation(model.getDays(), model.getPersons());
         double paymentFull = paymentInitial * starsCoefficient;
 
         String paymentRounded = Rounder.roundValue(paymentFull);
 
-
         String output = "------------------------------\n" +
                 "Название отеля: " + "test" + "\n" +
-                "Количество ночей: " + model.getDays() + "\n" +
-                "Количество людей: " + model.getPersons() + "\n" +
+                "Количество ночей: " + days + "\n" +
+                "Количество людей: " + persons + "\n" +
                 "К оплате (грн.): " + paymentRounded;
 
         view.getOutput(output);
