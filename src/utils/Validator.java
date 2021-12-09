@@ -72,4 +72,16 @@ public class Validator {
         }
         return quantity;
     }
+
+    public static String viewChooser(Scanner scanner) {
+        while (!scanner.hasNextLine()) {
+            System.out.println("Неверная операция. Повторите попытку: ");
+        }
+        String operation = scanner.nextLine().trim();
+        while (!operation.equalsIgnoreCase("Бронирование") & !operation.equalsIgnoreCase("Расчёт")) {
+            System.out.println("Неверная операция. Повторите попытку: ");
+            operation = scanner.nextLine().trim();
+        }
+        return operation;
+    }
 }
