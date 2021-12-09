@@ -42,4 +42,15 @@ public class Validator {
         return quantity;
     }
 
+    public static String operationChooser(Scanner scanner) {
+        while (!scanner.hasNextLine()) {
+            System.out.println("Неверная операция. Повторите попытку: ");
+        }
+        String operation = scanner.nextLine().trim();
+        while (!operation.equalsIgnoreCase("да") & !operation.equalsIgnoreCase("нет")) {
+            System.out.println("Неверная операция. Повторите попытку: ");
+            operation = scanner.nextLine().trim();
+        }
+        return operation;
+    }
 }
