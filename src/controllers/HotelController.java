@@ -18,7 +18,7 @@ public class HotelController {
 
     public void runApp() {
 
-        view.getInputs();
+        view.getStarsInput();
 
         switch (model.getStars()) {
             case 1 -> starsCoefficient = 1;
