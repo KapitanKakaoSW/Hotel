@@ -21,6 +21,7 @@ public class HotelController {
         view.getStarsInput();
         view.getPersonsInput();
         view.getDaysInput();
+        view.getChildren();
 
         switch (model.getStars()) {
             case 1 -> starsCoefficient = 1;

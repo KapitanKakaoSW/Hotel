@@ -12,6 +12,7 @@ public class HotelView {
     int persons;
     int stars;
     int rooms;
+    int children;
     Scanner scanner;
 
     public HotelView(HotelModel model) {
@@ -106,6 +107,24 @@ public class HotelView {
         System.out.println(title);
         days = Validator.validateQuantityInput(scanner);
         model.setDays(days);
+    }
+
+    public void getChildren() {
+
+        scanner = new Scanner(System.in);
+
+        title = "Введите количество детей(если таковые отсутствуют, введите 0): ";
+        System.out.println(title);
+
+        children = Validator.validateChildrenInput(scanner);
+
+        double tempChildren = children;
+        double tempPersons = persons;
+
+        if (children > 2 & tempPersons / tempChildren < 0.5) {
+            System.out.println("Вы превысили допустимый лимит детей. Выберите другое количество."); //звучит так себе
+            getChildren();
+        } else model.setAdditionalChildren(children);
     }
 
     public void getOutput(String output) {
