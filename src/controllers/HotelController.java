@@ -11,6 +11,7 @@ public class HotelController {
     HotelModel model;
     HotelView view;
     double starsCoefficient;
+    String additionalBed;
     HashMap<Integer, String> hotelNames = new HashMap<>(5);
 
     public HotelController(HotelModel model, HotelView view) {
@@ -39,18 +40,28 @@ public class HotelController {
             case 5 -> starsCoefficient = 2.5;
         }
 
-        String persons = String.valueOf(model.getPersons());
-        String days = String.valueOf(model.getDays());
-
-        double paymentInitial = model.priceCalculation(model.getDays(), model.getPersons());
+        double paymentInitial = model.priceCalculation(model.getDays(), model.getRooms());
         double paymentFull = paymentInitial * starsCoefficient;
+
+        String hotelName = hotelNames.get(model.getStars());
+        int days = model.getDays();
+        int persons = model.getPersons();
+        int children = model.getAdditionalChildren();
+        int rooms = model.getRooms();
+
+        if (model.getAdditionalAdults() > 0){
+            additionalBed = "Включена.";
+        } else additionalBed = "Отсутствует.";
 
         String paymentRounded = Rounder.roundValue(paymentFull);
 
         String output = "------------------------------\n" +
-                "Название отеля: " + "test" + "\n" +
+                "Название отеля: " + hotelName + "\n" +
                 "Количество ночей: " + days + "\n" +
-                "Количество людей: " + persons + "\n" +
+                "Количество взрослых: " + persons + "\n" +
+                "Количество детей: " + children + "\n" +
+                "Количество номеров: " + rooms + "\n" +
+                "Услуга \"дополнительная кровать\" : " + additionalBed + "\n" +
                 "К оплате (грн.): " + paymentRounded;
 
         view.getOutput(output);
